@@ -11,7 +11,7 @@ public class ComputeArray {
                 result[i] = array[i] * 5;
             } else if (array[i]  %   3 == 1) {
                 result[i] = array[i] + 7;
-            } else if (array[i]  % 3  == 2) {
+            } else {
                 result[i] = array[i] ;
             }
         }
