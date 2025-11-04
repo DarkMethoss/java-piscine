@@ -10,10 +10,10 @@ public class Cat {
         File file = new File(args[0]);
         String data = "";
         try (Scanner reader = new Scanner(file)) {
-            while (reader.hasNext()){
-                data += reader.nextLine()+"\n";
+            while (reader.hasNext()) {
+                data += reader.nextLine() + "\n";
             }
-        } 
+        }
         System.out.print(data);
     }
 }
