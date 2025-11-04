@@ -30,3 +30,12 @@ With method overloading, multiple methods can have the same name with different 
     str.lastIndexOf()
     str.subString()
     str.equals()
+
+
+# i/o : 
+**=>> Redirect the standard output (System.out) to a memory buffer.**
+
+```java
+    PrintStream printStream = new PrintStream(outputStream);
+    System.setOut(printStream);
+```

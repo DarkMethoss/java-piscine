@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Capitalize {
     public static void capitalize(String[] args) throws IOException {
         File input = new File(args[0]);
-        File result = new File(args[1]);
 
         try (Scanner scanner = new Scanner(input)) {
             FileWriter writer = new FileWriter(args[1],true);
