@@ -8,12 +8,12 @@ public class ExerciseRunner {
         PrintStream printStream = new PrintStream(outputStream);
         System.setOut(printStream);
 
-        Cat.cat(new String[]{"input.txt"});
+        Cat.cat(null);
         String output = outputStream.toString();
         // Reset out to stdout
         System.setOut(stdout);
         // System.out.println(output);
-        System.out.println(output.equals(""));
+        System.out.println(output.equals("asdf"));
 
         // ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
         // PrintStream printStream2 = new PrintStream(outputStream2);
