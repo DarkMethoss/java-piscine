@@ -71,7 +71,7 @@ public class CelestialObject {
 
     public Boolean equals(CelestialObject object) {
         if (object == null) {
-            return false
+            return false;
         }
         return x == object.x
             && y == object.y
