@@ -3,15 +3,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Capitalize {
-      public static void capitalize(String[] args) throws IOException {
-        if (args.length != 2) {
-            return;
-        }
-        String filename1 = args[0];
-        String filename2 = args[1];
-        Path path1 = Path.of(filename1);
-        Path path2 = Path.of(filename2);
-        String content = Files.readString(path1);
+    public static void capitalize(String[] args) throws IOException {
+        String content = Files.readString(args[0]);
         String[] words = content.trim().split("\\s+");
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
@@ -21,7 +14,5 @@ public class Capitalize {
         }
         String result = String.join(" ", words);
         Files.writeString(path2, result);
-
     }
-
 }
