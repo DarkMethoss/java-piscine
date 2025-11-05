@@ -9,5 +9,6 @@ public class ExerciseRunner {
         System.out.println(proxima.toString());
         System.out.println(star.equals(star2));
         System.out.println(star.equals(proxima));
+        star.hashCode();
     }
 }
