@@ -20,6 +20,9 @@ public class FileSearch {
                 }
             }
         }
+        if (filePath.isEmpty()){
+            return null;
+        }
         return filePath;
     }
 
