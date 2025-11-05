@@ -36,14 +36,11 @@ public class Planet extends CelestialObject{
         }
         
         Planet castedObject = (Planet) object; 
-        return x == castedObject.x
-            && y == castedObject.y
-            && z == castedObject.z
-            && centerStar.equals(castedObject.getCenterStar())
-            && name.equals(castedObject.name);
+        return super.equals(castedObject)
+            && Objects.equals(centerStar, castedObject.getCenterStar());
     }
 
     public int hashCode() {
-        return Objects.hash(x, y, z, name, centerStar);
+        return Objects.hash(super.x, super.y, super.z, super.name, this.centerStar);
     }
 }
