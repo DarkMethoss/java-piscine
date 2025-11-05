@@ -30,17 +30,17 @@ public class Planet extends CelestialObject{
         if (object == null) {
             return false;
         }
-        
+
         if (!(object instanceof Planet)) {
             return false;
         }
         
         Planet castedObject = (Planet) object; 
         return super.equals(castedObject)
-            && Objects.equals(centerStar, castedObject.getCenterStar());
+            && this.centerStar.equals(castedObject.getCenterStar());
     }
 
     public int hashCode() {
-        return Objects.hash(super.x, super.y, super.z, super.name, this.centerStar);
+        return Objects.hash(this.x, this.y, this.z, this.name, this.centerStar);
     }
 }
