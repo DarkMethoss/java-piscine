@@ -26,18 +26,13 @@ public class Planet extends CelestialObject{
     }
 
     @Override
-    public Boolean equals(CelestialObject object) {
-        if (object == null) {
-            return false;
+    public boolean equals(Object other) {
+        if (super.equals(other)) {
+            Planet otherCasted = (Planet) other;
+            return this.centerStar.equals(otherCasted.getCenterStar());
         }
 
-        if (!(object instanceof Planet)) {
-            return false;
-        }
-        
-        Planet castedObject = (Planet) object; 
-        return super.equals(castedObject)
-            && this.centerStar.equals(castedObject.getCenterStar());
+        return false ;
     }
 
     public int hashCode() {

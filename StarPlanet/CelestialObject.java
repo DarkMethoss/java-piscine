@@ -69,14 +69,20 @@ public class CelestialObject {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
     }
 
-    public Boolean equals(CelestialObject object) {
+    public boolean equals(Object object) {
         if (object == null) {
             return false;
         }
-        return x == object.x
-            && y == object.y
-            && z == object.z
-            && name.equals(object.name);
+        if ( this.getClass() != object.getClass() ) {
+            return false;
+        }
+        
+        CelestialObject objectCasted = (CelestialObject) object;
+
+        return x == objectCasted.x
+            && y == objectCasted.y
+            && z == objectCasted.z
+            && name.equals(objectCasted.name);
     }
 
     public int hashCode() {

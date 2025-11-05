@@ -24,23 +24,14 @@ public class Star extends CelestialObject {
     }
 
     @Override
-    public Boolean equals(CelestialObject object) {
+    public boolean equals(Object object) {
 
-        if (this == object) {
-            return true;
+        if (super.equals(object)) {
+            Star otherCasted = (Star) object;
+            return this.magnitude == otherCasted.getMagnitude();
         }
 
-        if (object == null) {
-            return false;
-        }
-        
-        if (!(object instanceof Star)) {
-            return false;
-        }
-        
-        Star castedObject = (Star) object; 
-        return super.equals(object)
-            && magnitude == castedObject.magnitude;
+        return false ;
     }
 
     public int hashCode() {
