@@ -70,7 +70,10 @@ public class CelestialObject {
     }
 
     public Boolean equals(CelestialObject object) {
-        return x == object.x 
+        if (object == null) {
+            return false
+        }
+        return x == object.x
             && y == object.y
             && z == object.z
             && name.equals(object.name);
