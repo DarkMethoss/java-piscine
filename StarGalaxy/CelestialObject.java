@@ -76,11 +76,13 @@ public class CelestialObject {
         if ( this.getClass() != object.getClass() ) {
             return false;
         }
+        
+        CelestialObject objectCasted = (CelestialObject) object;
 
-        return x == object.x
-            && y == object.y
-            && z == object.z
-            && name.equals(object.name);
+        return x == objectCasted.x
+            && y == objectCasted.y
+            && z == objectCasted.z
+            && name.equals(objectCasted.name);
     }
 
     public int hashCode() {
