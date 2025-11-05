@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 public class Capitalize {
     public static void capitalize(String[] args) throws IOException {
-        String content = Files.readString(args[0]);
+        String content = Files.readString(Path.of(args[0]));
         String[] words = content.trim().split("\\s+");
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
@@ -13,6 +13,6 @@ public class Capitalize {
             }
         }
         String result = String.join(" ", words);
-        Files.writeString(path2, result);
+        Files.writeString(Path.of(args[1]), result);
     }
 }
