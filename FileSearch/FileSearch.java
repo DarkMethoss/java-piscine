@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class FileSearch {
     public static String searchFile(String fileName) {
-        ArrayList<String> directories = new ArrayList<>(List.of("document")); 
+        ArrayList<String> directories = new ArrayList<>(List.of("documents")); 
         String filePath = "";
 
         while (directories.size() != 0 && filePath.isEmpty()) {
