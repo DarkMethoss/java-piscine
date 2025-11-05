@@ -23,19 +23,25 @@ public class Star extends CelestialObject {
         return String.format("%s shines at the %.3f magnitude", name, magnitude);
     }
 
-    public Boolean equals(Star object) {
+    @Override
+    public Boolean equals(CelestialObject object) {
         if (object == null) {
             return false;
         }
-        return x == object.x
-            && y == object.y
-            && z == object.z
-            && magnitude == object.magnitude
-            && name.equals(object.name);
+        
+        if (object instanceof Star) {
+            return false;
+        }
+        
+        Star castedObject = (Star) object; 
+        return x == castedObject.x
+            && y == castedObject.y
+            && z == castedObject.z
+            && magnitude == castedObject.magnitude
+            && name.equals(castedObject.name);
     }
 
     public int hashCode() {
-        System.out.printf("%s",x);
         return Objects.hash(x, y, z, name, magnitude);
     }
 }
