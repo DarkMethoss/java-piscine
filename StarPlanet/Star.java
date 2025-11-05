@@ -38,14 +38,11 @@ public class Star extends CelestialObject {
         }
         
         Star castedObject = (Star) object; 
-        return x == castedObject.x
-            && y == castedObject.y
-            && z == castedObject.z
-            && magnitude == castedObject.magnitude
-            && name.equals(castedObject.name);
+        return super.equals(object)
+            && magnitude == castedObject.magnitude;
     }
 
     public int hashCode() {
-        return Objects.hash(x, y, z, name, magnitude);
+        return Objects.hash(super.x, super.y, super.z, super.name, this.magnitude);
     }
 }
