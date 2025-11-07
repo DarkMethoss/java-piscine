@@ -31,7 +31,7 @@ public class Star extends CelestialObject {
             return this.magnitude == other.getMagnitude();
         }
 
-        return false 
+        return false ;
     }
 
     public int hashCode() {
