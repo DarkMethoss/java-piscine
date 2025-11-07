@@ -28,7 +28,7 @@ public class Star extends CelestialObject {
 
         if (super.equals(other)) {
             Star otherCasted = (Star) other;
-            return this.magnitude == other.getMagnitude();
+            return this.magnitude == otherCasted.getMagnitude();
         }
 
         return false ;
