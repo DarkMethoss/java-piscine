@@ -6,12 +6,13 @@ public class Star extends CelestialObject {
         super(name, x, y, z);
         this.magnitude = magnitude;
     }
-
-    public Star(String name, double x, double y, double z, double magnitude, Integer mass ) {
-        super(name, x, y, z, mass);
-        this.magnitude = magnitude;
+    public CelestialObject(String name, double x, double y, double z, Integer mass) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+        this.mass = mass;
     }
-
     public Star() {
         super();
         this.magnitude = 0;
@@ -30,10 +31,10 @@ public class Star extends CelestialObject {
     }
 
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(Object object) {
 
-        if (super.equals(other)) {
-            Star otherCasted = (Star) other;
+        if (super.equals(object)) {
+            Star otherCasted = (Star) object;
             return this.magnitude == otherCasted.getMagnitude();
         }
 
@@ -41,6 +42,6 @@ public class Star extends CelestialObject {
     }
 
     public int hashCode() {
-        return Objects.hash(x, y, z, name, magnitude);
+        return Objects.hash(super.x, super.y, super.z, super.name, this.magnitude);
     }
 }
