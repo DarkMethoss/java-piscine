@@ -19,25 +19,6 @@ public class Galaxy {
         celestialObjects.add(object);
     }
 
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) {
-            return true;
-        }
-        
-        if (!(this.getClass() == object.getClass())) {
-            return false;
-        }
-
-        Galaxy otherCasted = (Galaxy) object;
-        return this.celestialObjects.equals(otherCasted.getCelestialObjects());
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.celestialObjects);
-    }
-
-
     public HashMap<String, Integer> computeMassRepartition() {
         HashMap<String, Integer> res = new HashMap<String, Integer>();
         res.put("Planet",0);
