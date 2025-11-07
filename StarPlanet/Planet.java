@@ -11,6 +11,10 @@ public class Planet extends CelestialObject{
         super(name, x, y, z);
         this.centerStar = centerStar;
     }
+    public Planet(String name, double x, double y, double z, Star centerStar, Integer mass ) {
+        super(name, x, y, z, mass);
+        this.centerStar = centerStar;
+    }
 
     public Star getCenterStar() {
         return this.centerStar;
