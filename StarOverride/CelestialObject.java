@@ -6,6 +6,7 @@ public class CelestialObject {
     public double y;
     public double z;
     public String name;
+    public Integer mass;
     public static final double KM_IN_ONE_AU = 150000000; 
 
     public CelestialObject() {
@@ -15,11 +16,20 @@ public class CelestialObject {
         this.name = "Soleil";
     }
 
-    public CelestialObject(String name, double x, double y, double z) {
+     public CelestialObject(String name, double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.name = name;
+        this.mass = 0;
+    }
+
+    public CelestialObject(String name, double x, double y, double z, Integer mass) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+        this.mass = mass;
     }
 
     public void setX(double x){
@@ -54,6 +64,14 @@ public class CelestialObject {
         return name;
     }
 
+    public  void setMass(Integer value){
+        this.mass = value;
+    }
+    
+    public  Integer getMass() {
+        return this.mass;
+    }
+
     public static double getDistanceBetween(CelestialObject celestialObject1, CelestialObject celestialObject2) {
         double diffY = Math.pow((celestialObject1.y - celestialObject2.y), 2);
         double diffZ = Math.pow((celestialObject1.z - celestialObject2.z), 2);
@@ -69,20 +87,19 @@ public class CelestialObject {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
     }
 
-    public boolean equals(Object other) {
-        if (other == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
-        if ( this.getClass() != other.getClass() ) {
+        if ( this.getClass() != object.getClass() ) {
             return false;
         }
 
-        CelestialObject castedOther = (CelestialObject) other;
-
-        return x == castedOther.x
-            && y == castedOther.y
-            && z == castedOther.z
-            && name.equals(castedOther.name);
+        CelestialObject objectCasted = (CelestialObject) object;
+        return x == objectCasted.x
+            && y == objectCasted.y
+            && z == objectCasted.z
+            && name.equals(objectCasted.name);
     }
 
     public int hashCode() {
