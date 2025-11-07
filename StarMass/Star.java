@@ -2,6 +2,10 @@ import java.util.Objects;
 public class Star extends CelestialObject {
     private double magnitude;
 
+    public Star(String name, double x, double y, double z, double magnitude) {
+        super(name, x, y, z);
+        this.magnitude = magnitude;
+    }
     public Star(String name, double x, double y, double z, double magnitude, Integer mass) {
         super(name, x, y, z,mass);
         this.magnitude = magnitude;
