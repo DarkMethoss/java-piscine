@@ -1,4 +1,3 @@
-import java.lang.Math.*;
 import java.util.Objects;
 
 public class CelestialObject {
