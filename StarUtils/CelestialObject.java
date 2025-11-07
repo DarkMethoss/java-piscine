@@ -6,6 +6,7 @@ public class CelestialObject {
     public double y;
     public double z;
     public String name;
+    private Integer mass;
     public static final double KM_IN_ONE_AU = 150000000; 
 
     public CelestialObject() {
@@ -20,6 +21,21 @@ public class CelestialObject {
         this.y = y;
         this.z = z;
         this.name = name;
+    }
+    public CelestialObject(String name, double x, double y, double z, Integer mass) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+        this.mass = mass;
+    }
+
+    public void setMass(Integer value){
+        this.mass = value;
+    }
+    
+    public Integer getMass() {
+        return this.mass;
     }
 
     public void setX(double x){
@@ -69,14 +85,20 @@ public class CelestialObject {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
     }
 
-    public Boolean equals(CelestialObject object) {
+    public boolean equals(Object object) {
         if (object == null) {
             return false;
         }
-        return x == object.x
-            && y == object.y
-            && z == object.z
-            && name.equals(object.name);
+        if ( this.getClass() != object.getClass() ) {
+            return false;
+        }
+        
+        CelestialObject objectCasted = (CelestialObject) object;
+
+        return x == objectCasted.x
+            && y == objectCasted.y
+            && z == objectCasted.z
+            && name.equals(objectCasted.name);
     }
 
     public int hashCode() {
