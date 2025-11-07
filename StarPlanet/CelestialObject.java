@@ -6,6 +6,7 @@ public class CelestialObject {
     public double y;
     public double z;
     public String name;
+    public Integer mass;
     public static final double KM_IN_ONE_AU = 150000000; 
 
     public CelestialObject() {
@@ -15,11 +16,20 @@ public class CelestialObject {
         this.name = "Soleil";
     }
 
-    public CelestialObject(String name, double x, double y, double z) {
+    public CelestialObject(String name, double x, double y, double z, Integer mass) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.name = name;
+        this.mass = mass;
+    }
+
+    public void setMass(Integer value){
+        this.mass = value;
+    }
+    
+    public Integer getMass() {
+        return this.mass;
     }
 
     public void setX(double x){
