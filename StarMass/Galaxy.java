@@ -4,7 +4,10 @@ public class Galaxy {
     private List<CelestialObject> celestialObjects;
 
     public Galaxy() {
-        celestialObjects = new ArrayList<>();
+        this.celestialObjects = new ArrayList<>();
+    }
+    public Galaxy( List<CelestialObject> celestialObjects ) {
+        this.celestialObjects = celestialObjects;
     }
 
     public void setCelestialObjects( List<CelestialObject> objects) {
