@@ -57,7 +57,7 @@ public class Character {
                 res.append(" - " + character.toString() + "\n");
             }
         }
-        res.append(outline );
+        res.append(outline+ "\n" );
         return String.valueOf(res);
     }
 
