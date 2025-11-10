@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.stream.events.Characters;
-
 public class Character {
     private final int maxHealth;
     private int currentHealth;
@@ -23,6 +21,10 @@ public class Character {
 
     public int getCurrentHealth() {
         return this.currentHealth;
+    }
+
+    public void setCurrentHealth(int value) {
+        this.currentHealth = value;
     }
 
     public String getName() {
