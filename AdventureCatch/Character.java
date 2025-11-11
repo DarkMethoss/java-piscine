@@ -1,0 +1,89 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Character {
+    private final int maxHealth;
+    private int currentHealth;
+    private final String name;
+    private final Weapon weapon;
+    private static List<Character> allCharacters = new ArrayList<>();
+
+    public Character(String name, int maxHealth, Weapon weapon) {
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
+        this.name = name;
+        this.weapon = weapon;
+
+        Character.allCharacters.add(this);
+    }
+
+    public int getMaxHealth() {
+        return this.maxHealth;
+    }
+
+    public int getCurrentHealth() {
+        return this.currentHealth;
+    }
+
+    protected void setCurrentHealth(int value) {
+        this.currentHealth = value;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    @Override
+    public String toString() {
+        if (this.currentHealth == 0) {
+            return String.format("%s : KO", this.name);
+        } else {
+            return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
+        }
+    }
+
+    public abstract void takeDamage(int damage) throws DeadCharacterException;
+
+    public abstract void attack(Character character) throws DeadCharacterException;
+
+    public static String printStatus() {
+        String outline = "------------------------------------------";
+        StringBuilder res = new StringBuilder("");
+        res.append(outline + "\n");
+        if (Character.allCharacters.isEmpty()) {
+            res.append("Nobody's fighting right now !" + "\n");
+        } else {
+            res.append("Characters currently fighting :" + "\n");
+            
+            for (Character character : Character.allCharacters) {
+                res.append(" - " + character.toString() + "\n");
+            }
+        }
+        res.append(outline+ "\n" );
+        return String.valueOf(res);
+    }
+
+    public static Character fight(Character character1, Character character2) {
+        while (true) {
+            try {
+                character1.attack(character2);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                return character1;
+            }
+
+            try {
+                character2.attack(character1);
+                
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                return character2;
+            }
+
+        }
+    }
+}
