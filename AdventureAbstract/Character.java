@@ -23,7 +23,7 @@ public abstract class Character {
         return this.currentHealth;
     }
 
-    public void setCurrentHealth(int value) {
+    protected void setCurrentHealth(int value) {
         this.currentHealth = value;
     }
 
