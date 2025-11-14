@@ -12,7 +12,7 @@ public class ListSearchIndex {
         List<Integer> res = new ArrayList<Integer>();
         for (int i = 0; i< list.size(); i++){
             Integer nb = list.get(i);
-            if (nb == value){
+            if (nb.equals(value) ){
                 res.add(i);
             }
         }
