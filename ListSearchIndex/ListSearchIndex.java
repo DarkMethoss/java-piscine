@@ -16,6 +16,10 @@ public class ListSearchIndex {
                 res.add(i);
             }
         }
-        return res;
+        if (res.isEmpty()) {
+            return null;
+        }else {
+            return res;
+        }
     }
 }
