@@ -10,7 +10,7 @@ public class ListSearchIndex {
         if (index == -1) {
             return null;
         }else {
-            return null;
+            return index;
         }
     }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
@@ -21,7 +21,7 @@ public class ListSearchIndex {
         if (index == -1) {
             return null;
         }else {
-            return null;
+            return index;
         }
     }
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
