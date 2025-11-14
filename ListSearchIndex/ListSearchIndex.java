@@ -3,10 +3,14 @@ import java.util.ArrayList;
 
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
-        return list.lastIndexOf(value);
+        int index =  list.lastIndexOf(value);
+        if (index == -1) return null;
+        else return index;
     }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
-        return list.lastIndexOf(value);
+        int index = list.lastIndexOf(value);
+        if (index == -1) return null;
+        else return index;
     }
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
         List<Integer> res = new ArrayList<Integer>();
