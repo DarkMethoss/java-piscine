@@ -17,7 +17,7 @@ public class ListSearchIndex {
         if (list == null) {
             return null;
         }
-        int index = list.lastIndexOf(value);
+        int index = list.indexOf(value);
         if (index == -1) {
             return null;
         }else {
