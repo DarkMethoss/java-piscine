@@ -17,11 +17,11 @@ public class KeepTheChange {
                 if (deff >= 0) {
                     change.add(coin);
                     amount -= coin;
+                    break;
                 }
             }
         }
 
-        Collections.sort(change, Collections.reverseOrder());
         return change;
     }
 }
