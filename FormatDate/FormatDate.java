@@ -7,12 +7,11 @@ import java.time.format.TextStyle;
 import java.time.temporal.ChronoField;
 import java.util.Locale;
 
-import javax.swing.text.DateFormatter;
-
 public class FormatDate {
-    // Le 22 août de l'an 2021 à 13h25m et 46s
     public static String formatToFullText(LocalDateTime dateTime) {
-        
+        if (dateTime == null) {
+            return null;
+        }
         DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder()
             .appendLiteral("Le ")
             .appendValue(ChronoField.DAY_OF_MONTH, 2)
@@ -32,12 +31,18 @@ public class FormatDate {
     }
 
     public static String formatSimple(LocalDate date) {
+        if (date == null) {
+            return null;
+        }
         DateTimeFormatter f = DateTimeFormatter.ofPattern("MMMM dd yy", Locale.ITALIAN);
         return date.format(f);
     }
 
     // 16:18:56.8495847
     public static String formatIso(LocalTime time) {
+        if (time == null) {
+            return null;
+        }
         DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm:ss:n");
         return time.format(f);
     }

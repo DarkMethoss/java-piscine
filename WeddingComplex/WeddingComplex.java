@@ -42,9 +42,7 @@ public class WeddingComplex {
     
     private static boolean prefersNewMan(String woman, String manA, String manB,
         Map<String, List<String>> second) {
-
         List<String> preferences = second.get(woman);
-
         return preferences.indexOf(manA) < preferences.indexOf(manB);
     }
 }
