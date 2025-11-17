@@ -42,13 +42,8 @@ public class FormatDate {
         if (time == null) {
             return null;
         }
-        DateTimeFormatter f = new DateTimeFormatterBuilder()
-                .appendPattern("HH:mm:ss")
-                .optionalStart()
-                .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, true)
-                .optionalEnd()
-                .toFormatter();
-        return time.format(f);
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm:ss:n");
+        return time.format(f).replaceAll("\\:0$", "");
     }
 
 }
