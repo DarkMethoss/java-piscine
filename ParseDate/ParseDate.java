@@ -1,11 +1,6 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
+import java.time.*;
+import java.time.format.*;
 import java.time.temporal.ChronoField;
-import java.util.Date;
-import java.util.Formatter;
 import java.util.Locale;
 import java.util.Map;
 
@@ -16,6 +11,7 @@ public class ParseDate {
             return null;
         }
         DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+        DateTimeFormatter.ofPattern(stringDate)
         LocalDateTime parsedDate = LocalDateTime.parse(stringDate, format);
         return parsedDate;
     }
