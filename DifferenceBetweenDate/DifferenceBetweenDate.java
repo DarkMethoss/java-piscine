@@ -7,11 +7,17 @@ import java.time.Period;
 public class DifferenceBetweenDate {
 
     public static Duration durationBetweenTime(LocalTime localTime1, LocalTime localTime2) {
+        if (localTime1 == null || localTime2 == null) {
+            return null;
+        }
         Duration duration = Duration.between(localTime1, localTime2);
         return duration.isNegative() ? duration.negated() : duration;
     }
 
     public static Period periodBetweenDate(LocalDate date1, LocalDate date2) {
+         if (date1 == null || date2 == null) {
+            return null;
+        }
         if (date1.isAfter(date2)) {
             return Period.between(date2, date1);
         }
@@ -19,6 +25,9 @@ public class DifferenceBetweenDate {
     }
 
     public static Long numberOfHoursBetweenDateTime(LocalDateTime dateTime1, LocalDateTime dateTime2) {
+         if (dateTime1 == null || dateTime2 == null) {
+            return null;
+        }
         Duration duration = Duration.between(dateTime1, dateTime2);
         long hours = duration.toHours();
         return Math.abs(hours);
