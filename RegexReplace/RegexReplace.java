@@ -64,7 +64,6 @@ public class RegexReplace {
         } else {
             return s;
         }
-
         return String.join(".", obfuscatedDomainLevels);
     }
 }
