@@ -1,13 +1,13 @@
 public class RegexMatch {
     public static boolean containsOnlyAlpha(String s) {
-        return s.matches("[a-z\\s]*");
+        return s.matches("[a-z]*");
     }
     
     public static boolean startWithLetterAndEndWithNumber(String s) {
-        return s.matches("^[a-z][a-z\\s\\d]*\\d$");
+        return s.matches("^[a-z].*[0-9]$");
     }
     
     public static boolean containsAtLeast3SuccessiveA(String s) {
-        return true;
+        return s.matches(".*A{3,}.*");
     }
 }

@@ -1,13 +1,12 @@
 import java.io.IOException;
 
 public class ExerciseRunner {
-
     public static void main(String[] args) throws IOException {
-        System.out.println(RegexMatch.containsOnlyAlpha("1azejkdfhjsdf"));
-        System.out.println(RegexMatch.containsOnlyAlpha("azejkd fhjsdf"));
-        System.out.println(RegexMatch.startWithLetterAndEndWithNumber("asjd jd34jds jkfd6"));
-        System.out.println(RegexMatch.startWithLetterAndEndWithNumber("asjd jd34jds jkfd6."));
-        // System.out.println(RegexMatch.containsAtLeast3SuccessiveA("sdjkAAAAAsdjksj"));
-        // System.out.println(RegexMatch.containsAtLeast3SuccessiveA("sdjkAAsdaaasdjksj"));
+        System.out.println(RegexMatch.containsOnlyAlpha("azejkdfhjsdf"));// true
+        System.out.println(RegexMatch.containsOnlyAlpha("azejkd fhjsdf"));// flase
+        System.out.println(RegexMatch.startWithLetterAndEndWithNumber("asjd jd34jds jkfd6")); // true
+        System.out.println(RegexMatch.startWithLetterAndEndWithNumber("asjd jd34jds jkfd6.")); // false
+        System.out.println(RegexMatch.containsAtLeast3SuccessiveA("sdjkAAAAAsdjksj")); // true 
+        System.out.println(RegexMatch.containsAtLeast3SuccessiveA("sdjkAAsdaaasdjksj")); // false
     }
 }
